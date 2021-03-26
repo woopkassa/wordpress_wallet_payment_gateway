@@ -187,7 +187,7 @@ public $debug = 'yes';
 				$backUrl = $this->get_return_url($order);
 				$orderPrefix = $this->get_option('order_prefix');
 				$serviceName = $this->get_option('service_name');
-				$invoice = $client->createInvoice($orderPrefix . '_' . $order->id, $backUrl, $requestUrl, $order->order_total, $serviceName, 'Оплата заказа №' . $order->id, '', '', $order->billing_email, $order->billing_phone, 32);
+				$invoice = $client->createInvoice(1, $orderPrefix . '_' . $order->id, $backUrl, $requestUrl, $order->order_total, $serviceName, 'Оплата заказа №' . $order->id, '', '', $order->billing_email, $order->billing_phone, 32);
 				$woocommerce->cart->empty_cart();
 				$order->update_status('pending', __('Payment Pending.', 'woocommerce'));
 				//$order->payment_complete($invoice->response->operationId);

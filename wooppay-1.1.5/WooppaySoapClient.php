@@ -110,6 +110,7 @@ class WooppaySoapClient
 	}
 
 	/**
+	 * @param int $cardForbidden
 	 * @param string $referenceId
 	 * @param string $backUrl
 	 * @param string $requestUrl
@@ -123,9 +124,10 @@ class WooppaySoapClient
 	 * @param int $serviceType
 	 * @return CashCreateInvoiceResponse
 	 */
-	public function createInvoice($referenceId, $backUrl, $requestUrl, $amount, $serviceName = '', $addInfo = '', $deathDate = '', $description = '', $userEmail = '', $userPhone = '', $serviceType = 32)
+	public function createInvoice($cardForbidden, $referenceId, $backUrl, $requestUrl, $amount, $serviceName = '', $addInfo = '', $deathDate = '', $description = '', $userEmail = '', $userPhone = '', $serviceType = 32)
 	{
 		$data = new CashCreateInvoiceByServiceRequest();
+		$data->cardForbidden = $cardForbidden;
 		$data->referenceId = $referenceId;
 		$data->backUrl = $backUrl;
 		$data->requestUrl = $requestUrl;

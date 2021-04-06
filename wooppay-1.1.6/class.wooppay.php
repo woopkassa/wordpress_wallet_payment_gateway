@@ -23,8 +23,8 @@
  * THE SOFTWARE.
  *
  * @copyright   Copyright (c) 2012-2015 Wooppay
- * @author      Yaroshenko Vladimir <mr.struct@mail.ru>
- * @version     1.1.5
+ * @author      Chikabar
+ * @version     1.1.6
  */
 
 class WC_Gateway_Wooppay extends WC_Payment_Gateway
@@ -33,7 +33,7 @@ public $debug = 'yes';
 	public function __construct()
 	{
 		$this->id = 'wooppay';
-		$this->icon = apply_filters('woocommerce_wooppay_icon', plugins_url() . '/wooppay-1.1.5/assets/images/btnWP.png');
+		$this->icon = apply_filters('woocommerce_wooppay_icon', plugins_url() . '/wooppay-1.1.6/assets/images/btnWP.png');
 		$this->has_fields = false;
 		$this->method_title = __('WOOPPAY', 'Wooppay');
 		$this->init_form_fields();

@@ -37,7 +37,7 @@
 
 function woocommerce_cpg_fallback_notice_wallet()
 {
-	echo '<div class="error"><p>' . sprintf(__('WooCommerce Wooppay Gateways depends on the last version of %s to work!', 'wooppay'), '<a href="http://wordpress.org/extend/plugins/woocommerce/">WooCommerce</a>') . '</p></div>';
+	echo '<div class="error"><p>' . sprintf(__('WooCommerce Wooppay Gateways depends on the last version of %s to work!', 'wooppay_wallet'), '<a href="http://wordpress.org/extend/plugins/woocommerce/">WooCommerce</a>') . '</p></div>';
 }
 
 function custom_payment_gateway_load_wallet()
@@ -67,7 +67,7 @@ function wcCpg_action_links_wallet($links)
 		'settings' => sprintf(
 			'<a href="%s">%s</a>',
 			admin_url('admin.php?page=wc-settings&tab=checkout&section=wc_gateway_wooppay_wallet'),
-			__('Payment Gateways', 'wooppay')
+			__('Payment Gateways', 'wooppay_wallet')
 		)
 	);
 

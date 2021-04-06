@@ -32,7 +32,7 @@ class WC_Gateway_Wooppay_Wallet extends WC_Payment_Gateway
 public $debug = 'yes';
 	public function __construct()
 	{
-		$this->id = 'wooppay';
+		$this->id = 'wooppay_wallet';
 		$this->icon = apply_filters('woocommerce_wooppay_icon', plugins_url() . '/wooppay-1.1.6/assets/images/btnWP.png');
 		$this->has_fields = false;
 		$this->method_title = __('WOOPPAY', 'Wooppay');
@@ -83,7 +83,7 @@ public $debug = 'yes';
 	public function admin_options()
 	{
 		?>
-		<h3><?php _e('Wooppay', 'wooppay'); ?></h3>
+		<h3><?php _e('Wooppay', 'wooppay_wallet'); ?></h3>
 		<table class="form-table">
 			<?php $this->generate_settings_html(); ?>
 		</table> <?php
@@ -103,73 +103,73 @@ public $debug = 'yes';
 
 		$this->form_fields = array(
 			'enabled' => array(
-				'title' => __('Enable/Disable', 'wooppay'),
+				'title' => __('Enable/Disable', 'wooppay_wallet'),
 				'type' => 'checkbox',
-				'label' => __('Enable Wooppay Gateway', 'wooppay'),
+				'label' => __('Enable Wooppay Gateway', 'wooppay_wallet'),
 				'default' => 'no'
 			),
 			'title' => array(
-				'title' => __('Title', 'wooppay'),
+				'title' => __('Title', 'wooppay_wallet'),
 				'type' => 'text',
-				'description' => __('This controls the title which the user sees during checkout.', 'wooppay'),
+				'description' => __('This controls the title which the user sees during checkout.', 'wooppay_wallet'),
 				'desc_tip' => true,
-				'default' => __('Плати с Wooppay. Получай кешбэк 4%', 'wooppay')
+				'default' => __('Плати с Wooppay. Получай кешбэк 4%', 'wooppay_wallet')
 			),
 			'description' => array(
-				'title' => __('Description', 'wooppay'),
+				'title' => __('Description', 'wooppay_wallet'),
 				'type' => 'textarea',
-				'description' => __('This controls the description which the user sees during checkout.', 'wooppay'),
-				'default' => __('Оплата с помощью кредитной карты или кошелька Wooppay', 'wooppay')
+				'description' => __('This controls the description which the user sees during checkout.', 'wooppay_wallet'),
+				'default' => __('Оплата с помощью кредитной карты или кошелька Wooppay', 'wooppay_wallet')
 			),
 			'instructions' => array(
-				'title' => __('Instructions', 'wooppay'),
+				'title' => __('Instructions', 'wooppay_wallet'),
 				'type' => 'textarea',
-				'description' => __('Instructions that will be added to the thank you page.', 'wooppay'),
-				'default' => __('Введите все необходимые данные и вас перенаправит на портал Wooppay для оплаты', 'wooppay')
+				'description' => __('Instructions that will be added to the thank you page.', 'wooppay_wallet'),
+				'default' => __('Введите все необходимые данные и вас перенаправит на портал Wooppay для оплаты', 'wooppay_wallet')
 			),
 			'api_details' => array(
-				'title' => __('API Credentials', 'wooppay'),
+				'title' => __('API Credentials', 'wooppay_wallet'),
 				'type' => 'title',
 			),
 			'api_url' => array(
-				'title' => __('API URL', 'wooppay'),
+				'title' => __('API URL', 'wooppay_wallet'),
 				'type' => 'text',
-				'description' => __('Get your API credentials from Wooppay.', 'wooppay'),
+				'description' => __('Get your API credentials from Wooppay.', 'wooppay_wallet'),
 				'default' => '',
 				'desc_tip' => true,
-				'placeholder' => __('Optional', 'wooppay')
+				'placeholder' => __('Optional', 'wooppay_wallet')
 			),
 			'api_username' => array(
-				'title' => __('API Username', 'wooppay'),
+				'title' => __('API Username', 'wooppay_wallet'),
 				'type' => 'text',
-				'description' => __('Get your API credentials from Wooppay.', 'wooppay'),
+				'description' => __('Get your API credentials from Wooppay.', 'wooppay_wallet'),
 				'default' => '',
 				'desc_tip' => true,
-				'placeholder' => __('Optional', 'wooppay')
+				'placeholder' => __('Optional', 'wooppay_wallet')
 			),
 			'api_password' => array(
-				'title' => __('API Password', 'wooppay'),
+				'title' => __('API Password', 'wooppay_wallet'),
 				'type' => 'text',
-				'description' => __('Get your API credentials from Wooppay.', 'wooppay'),
+				'description' => __('Get your API credentials from Wooppay.', 'wooppay_wallet'),
 				'default' => '',
 				'desc_tip' => true,
-				'placeholder' => __('Optional', 'wooppay')
+				'placeholder' => __('Optional', 'wooppay_wallet')
 			),
 			'order_prefix' => array(
-				'title' => __('Order prefix', 'wooppay'),
+				'title' => __('Order prefix', 'wooppay_wallet'),
 				'type' => 'text',
-				'description' => __('Order prefix', 'wooppay'),
+				'description' => __('Order prefix', 'wooppay_wallet'),
 				'default' => '',
 				'desc_tip' => true,
-				'placeholder' => __('Optional', 'wooppay')
+				'placeholder' => __('Optional', 'wooppay_wallet')
 			),
 			'service_name' => array(
-				'title' => __('Service name', 'wooppay'),
+				'title' => __('Service name', 'wooppay_wallet'),
 				'type' => 'text',
-				'description' => __('Service name', 'wooppay'),
+				'description' => __('Service name', 'wooppay_wallet'),
 				'default' => '',
 				'desc_tip' => true,
-				'placeholder' => __('Optional', 'wooppay')
+				'placeholder' => __('Optional', 'wooppay_wallet')
 			),
 		);
 

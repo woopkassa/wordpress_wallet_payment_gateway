@@ -27,7 +27,7 @@
  * @version     1.1.6
  */
 
-class WC_Gateway_Wooppay extends WC_Payment_Gateway
+class WC_Gateway_Wooppay_Wallet extends WC_Payment_Gateway
 {
 public $debug = 'yes';
 	public function __construct()
@@ -183,7 +183,7 @@ public $debug = 'yes';
 		try {
 			$client = new WooppaySoapClient($this->get_option('api_url'));
 			if ($client->login($this->get_option('api_username'), $this->get_option('api_password'))) {
-				$requestUrl = WC()->api_request_url('WC_Gateway_Wooppay') . '?id_order=' . $order_id . '&key=' . $order->order_key;
+				$requestUrl = WC()->api_request_url('WC_Gateway_Wooppay_Wallet') . '?id_order=' . $order_id . '&key=' . $order->order_key;
 				$backUrl = $this->get_return_url($order);
 				$orderPrefix = $this->get_option('order_prefix');
 				$serviceName = $this->get_option('service_name');

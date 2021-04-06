@@ -35,38 +35,38 @@
  *
  */
 
-function woocommerce_cpg_fallback_notice()
+function woocommerce_cpg_fallback_notice_wallet()
 {
 	echo '<div class="error"><p>' . sprintf(__('WooCommerce Wooppay Gateways depends on the last version of %s to work!', 'wooppay'), '<a href="http://wordpress.org/extend/plugins/woocommerce/">WooCommerce</a>') . '</p></div>';
 }
 
-function custom_payment_gateway_load()
+function custom_payment_gateway_load_wallet()
 {
 	if (!class_exists('WC_Payment_Gateway')) {
-		add_action('admin_notices', 'woocommerce_cpg_fallback_notice');
+		add_action('admin_notices', 'woocommerce_cpg_fallback_notice_wallet');
 		return;
 	}
 
-	function wc_Custom_add_gateway($methods)
+	function wc_Custom_add_gateway_wallet($methods)
 	{
-		$methods[] = 'WC_Gateway_Wooppay';
+		$methods[] = 'WC_Gateway_Wooppay_Wallet';
 		return $methods;
 	}
 
-	add_filter('woocommerce_payment_gateways', 'wc_Custom_add_gateway');
+	add_filter('woocommerce_payment_gateways', 'wc_Custom_add_gateway_wallet');
 
 
 	require_once plugin_dir_path(__FILE__) . 'class.wooppay.php';
 }
 
-add_action('plugins_loaded', 'custom_payment_gateway_load', 0);
+add_action('plugins_loaded', 'custom_payment_gateway_load_wallet', 0);
 
-function wcCpg_action_links($links)
+function wcCpg_action_links_wallet($links)
 {
 	$settings = array(
 		'settings' => sprintf(
 			'<a href="%s">%s</a>',
-			admin_url('admin.php?page=wc-settings&tab=checkout&section=wc_gateway_wooppay'),
+			admin_url('admin.php?page=wc-settings&tab=checkout&section=wc_gateway_wooppay_wallet'),
 			__('Payment Gateways', 'wooppay')
 		)
 	);
@@ -74,7 +74,7 @@ function wcCpg_action_links($links)
 	return array_merge($settings, $links);
 }
 
-add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'wcCpg_action_links');
+add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'wcCpg_action_links_wallet');
 
 
 ?>

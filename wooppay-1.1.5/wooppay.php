@@ -23,14 +23,14 @@
  * THE SOFTWARE.
  *
  * @copyright   Copyright (c) 2012-2015 Wooppay
- * @author      Yaroshenko Vladimir <mr.struct@mail.ru>
- * @version     1.1.5
+ * @author      Chikabar
+ * @version     1.1.6
  * @wordpress-plugin
- * Plugin Name:       WooCommerce Wooppay Payment Gateways
+ * Plugin Name:       WooCommerce Wooppay Wallet Payment Gateways
  * Plugin URI:
- * Description:       Add Wooppay Payment Gateways for WooCommerce.
- * Version:           1.1.5
- * Author:            Yaroshenko Vladimir
+ * Description:       Add Wooppay Wallet Payment Gateways for WooCommerce.
+ * Version:           1.1.6
+ * Author:            Chikabar
  * License:           The MIT License (MIT)
  *
  */
